@@ -1,0 +1,30 @@
+{% extends 'cbvApp/index.html' %}
+
+{% block body_block %}
+    <h2 id="test">Students Information</h2>
+    <table border="2" class="text-primary">
+        <thead>
+            <th>Name</th>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Address</th>
+            <th></th>
+            <th></th>
+
+        </thead>
+        <tbody>
+             {% for student in student_list %}
+                <tr>
+                    <td><a href="{% url 'detail_view' student.id %}">{{student.name}}</a></td>
+                    <td>{{student.marks}}</td>
+                    <td>{{student.grade}}</td>
+                    <td>{{student.address}}</td>
+                    <td><button><a href="{% url 'update_view' student.id %}">Edit</a></button></td>
+                    <td><button><a href="{% url 'delete_view' student.id %}">Delete</a></button></td>
+                </tr>
+             {% endfor %}
+
+        </tbody>
+        <button><a href="{% url 'create_view' %}">Create</a></button>
+    </table>
+{% endblock %}

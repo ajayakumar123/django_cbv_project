@@ -1,0 +1,16 @@
+{% extends 'cbvApp/index.html' %}
+{% block body_block %}
+    <div class="text-primary">
+        <h2>{{student.name}}'s Detailed Information</h2>
+        <hr>
+        <p>Name:{{student.name}}</p>
+        <p>Marks:{{student.marks}}</p>
+        <p>Grade:{{student.grade}}</p>
+        <p>Address:{{student.address}}</p>
+        <td><button><a href="{% url 'list_view' %}">Home</a></button></td>
+        <!--
+        <td><button><a href="/emp_update/{{emp.id}}">Edit</a></button></td>
+        <td><button><a href="/emp_delete/{{emp.id}}">Delete</a></button></td>-->
+    </div>
+
+{% endblock %}
